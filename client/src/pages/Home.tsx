@@ -58,7 +58,7 @@ export default function Home() {
             <div className="w-8 h-8 rounded bg-[#003366] flex items-center justify-center">
               <FaBuildingColumns className="text-white text-sm" />
             </div>
-            <span className="font-display font-bold text-xl text-[#003366] tracking-tight">TheGSCorp</span>
+            <span className="font-display font-bold text-xl text-[#003366] tracking-tight">Generational Seed Corporation</span>
           </div>
           <div className="hidden md:flex items-center gap-8 font-medium text-sm text-[#003366]/80">
             <a href="#thesis" className="hover:text-[#003366] transition-colors">Thesis</a>
@@ -75,29 +75,37 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-[#003366]">
-        {/* Subtle background abstract shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[100px]" />
-          <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-500/10 blur-[120px]" />
+      <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-[#003366]">
+        {/* Cinematic Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-40"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-business-district-at-night-4434-large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 video-overlay z-10" />
         </div>
         
-        <motion.div style={{ y: heroY }} className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div style={{ y: heroY }} className="max-w-7xl mx-auto px-6 relative z-20">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-medium mb-8 backdrop-blur-sm">
               <FaGlobe className="text-blue-300" />
-              <span>Generational Seed Corporation</span>
+              <span>Institutional Platform</span>
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[1.05] tracking-tight mb-8">
-              Engineering Governance-First <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Growth.</span>
+              Engineering Governance-First <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Enterprise Growth.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100/80 mb-12 max-w-2xl font-light leading-relaxed">
-              We build, structure, and scale generational enterprise infrastructure that transforms untapped potential into systematic value.
+            <p className="text-xl md:text-2xl text-blue-100/80 mb-12 max-w-3xl font-light leading-relaxed">
+              A value orchestration layer transforming undervalued potential into structured, scalable institutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -140,26 +148,26 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {/* Main Feature - Spans 2 columns */}
-            <motion.div variants={fadeUp} className="md:col-span-2 bg-white rounded-3xl p-10 institutional-shadow border border-border/50 flex flex-col justify-between group hover:institutional-shadow-hover transition-all duration-300">
+            <motion.div variants={fadeUp} className="md:col-span-2 bg-white rounded-3xl p-10 institutional-shadow border border-slate-200 flex flex-col justify-between group hover:institutional-shadow-hover transition-all duration-300">
               <div className="w-14 h-14 bg-blue-50 text-[#003366] rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform">
                 <FaMagnifyingGlassChart />
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold text-foreground mb-3">Untapped Potential</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
-                  We identify and isolate high-value opportunities within inefficient markets. By applying rigorous governance, we unlock dormant capital and operational capacity.
+                  High entrepreneurial base operating outside formal systems. We identify and isolate high-value opportunities within inefficient markets.
                 </p>
               </div>
             </motion.div>
 
             {/* Side Feature 1 */}
-            <motion.div variants={fadeUp} className="bg-white rounded-3xl p-10 institutional-shadow border border-border/50 group hover:institutional-shadow-hover transition-all duration-300">
+            <motion.div variants={fadeUp} className="bg-white rounded-3xl p-10 institutional-shadow border border-slate-200 group hover:institutional-shadow-hover transition-all duration-300">
               <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform">
                 <FaNetworkWired />
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">Unfounded Opportunities</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Connecting isolated nodes of value through strategic market positioning and robust technological rails.
+                High-growth ideas left unvetted. Connecting isolated nodes of value through strategic market positioning.
               </p>
             </motion.div>
 
@@ -170,7 +178,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-display font-bold mb-3">Systems That Drive Growth</h3>
               <p className="text-white/80 leading-relaxed">
-                Institutional-grade frameworks designed to compound value symmetrically across our entire ecosystem over decades.
+                Structure determines longevity. Institutional-grade frameworks designed to compound value symmetrically.
               </p>
             </motion.div>
           </motion.div>
@@ -195,23 +203,23 @@ export default function Home() {
             {[
               {
                 title: "GSI",
-                subtitle: "Investment & Enterprise Dev",
+                subtitle: "Generational Seed Investment",
                 icon: <FaBuildingColumns />,
-                desc: "Capital allocation and architectural structuring for high-growth potential assets.",
+                desc: "Enterprise development and investment-readiness for high-growth potential assets.",
                 color: "bg-blue-50 text-blue-700"
               },
               {
                 title: "Agro Services",
-                subtitle: "Supply Chain",
+                subtitle: "And Networks",
                 icon: <FaSeedling />,
-                desc: "Modernizing agricultural logistics, optimizing yields, and securing food supply lines.",
+                desc: "Farm-to-market supply and cooperative governance modernized for security.",
                 color: "bg-emerald-50 text-emerald-700"
               },
               {
                 title: "GSC Marketplace",
-                subtitle: "BarterBridge Trade",
+                subtitle: "BarterBridge™",
                 icon: <FaHandshakeAngle />,
-                desc: "Facilitating seamless B2B transactions and alternative trade clearing protocols.",
+                desc: "Value orchestration, trade, and marketing through clearing protocols.",
                 color: "bg-purple-50 text-purple-700"
               }
             ].map((sub, i) => (
@@ -251,8 +259,8 @@ export default function Home() {
             variants={fadeUp}
             className="mb-20 text-center"
           >
-            <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">The Framework</h2>
-            <p className="text-muted-foreground text-xl">A systematic approach to value creation.</p>
+            <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Tailored Opportunity Framework™</h2>
+            <p className="text-muted-foreground text-xl">A visual approach to value creation.</p>
           </motion.div>
 
           {/* Timeline Line */}
@@ -387,12 +395,39 @@ export default function Home() {
 
           </div>
 
-          <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-blue-200/60 text-sm">
-            <p>&copy; {new Date().getFullYear()} Generational Seed Corporation. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 text-blue-200/60 text-sm">
+            <div className="flex flex-col gap-4">
+              <span className="font-bold text-white text-lg">Generational Seed Corporation</span>
+              <p className="max-w-xs">Governance-first enterprise infrastructure for generational value creation.</p>
             </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
+              <div className="space-y-3">
+                <h4 className="text-white font-semibold">Platform</h4>
+                <ul className="space-y-2">
+                  <li><a href="#thesis" className="hover:text-white transition-colors">Thesis</a></li>
+                  <li><a href="#subsidiaries" className="hover:text-white transition-colors">Entities</a></li>
+                  <li><a href="#framework" className="hover:text-white transition-colors">Framework</a></li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h4 className="text-white font-semibold">Company</h4>
+                <ul className="space-y-2">
+                  <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Network</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h4 className="text-white font-semibold">Legal</h4>
+                <ul className="space-y-2">
+                  <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/5 text-center text-blue-200/40 text-xs">
+            <p>&copy; {new Date().getFullYear()} Generational Seed Corporation. All rights reserved.</p>
           </div>
         </div>
       </section>

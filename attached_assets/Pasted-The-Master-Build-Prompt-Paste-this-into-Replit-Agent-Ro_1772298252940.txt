@@ -1,0 +1,57 @@
+The "Master Build" Prompt (Paste this into Replit Agent)
+Role: Expert Frontend Architect.
+Project: TheGSCorp (Generational Seed Corporation) Institutional Platform.
+Tech Stack: Next.js (App Router), Tailwind CSS, Framer Motion, Font Awesome 6 (fa6) via React Icons.
+
+I. Visual Engineering (The "Stripe" Aesthetic):
+
+Hero Background: Implement a full-bleed, cinematic looping video background (modern bridges or abstract structural growth). Apply a 60% Deep Blue (#003366) overlay so white text is perfectly sharp.
+
+Colors: Strictly Pure White (#FFFFFF) backgrounds and Deep Institutional Blue (#003366) for primary elements.
+
+Design Style: Use Bento Grids and large white space. Avoid "slideshow" or "PowerPoint" layouts. Use subtle borders (border-slate-200) and soft shadows.
+
+Icons: STRICTLY use Font Awesome 6 (fa6) icons. Do not use Lucide or generic SVGs.
+
+II. Core Content (Sourced from GS Corp PDF):
+
+Branding: Use the full name Generational Seed Corporation in the header.
+
+Hero Headline: "Engineering Governance-First Enterprise Growth".
+
+Hero Sub-headline: "A value orchestration layer transforming undervalued potential into structured, scalable institutions."
+
+The Market Reality (Bento Section): Feature three cards explaining:
+
+Untapped Potential: High entrepreneurial base operating outside formal systems.
+
+Unfounded Opportunities: High-growth ideas left unvetted.
+
+Systems That Drive Growth: Structure determines longevity.
+
+III. Active Subsidiaries (Communication-Focused):
+
+Feature ONLY these three using Font Awesome icons:
+
+GSI (Generational Seed Investment): Enterprise development and investment-readiness.
+
+Agro Services and Networks: Farm-to-market supply and cooperative governance.
+
+GSC Marketplace (BarterBridge™): Value orchestration, trade, and marketing.
+
+IV. Process & Footer:
+
+The Framework: Create a visual, animated 4-step timeline for the Tailored Opportunity Framework™: Diagnose → Structure → Activate → Scale.
+
+Navigation: A floating "Glassmorphism" header with a "Partner With Us" button.
+
+Footer: Include "Governance-first enterprise infrastructure for generational value creation" and the full navigation menu.
+
+V. Interaction:
+
+Use Framer Motion for "fade-in-up" animations as the user scrolls. Elements should feel like they are "sliding into place" with a premium feel.
+
+One Last Professional Tip:
+When Replit finishes the build, look at the Hero component. If the video doesn't load because it needs a link, you can tell the Agent:
+
+"Use a high-quality placeholder video link from Pexels or a subtle CSS-animated mesh gradient if the video file is missing."
