@@ -1,28 +1,51 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type ContactInput, type ContactResponse } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+
+interface ContactInput {
+  name: string;
+  email: string;
+  message: string;
+  type: string;
+  captchaToken: string;
+}
+
+const API_URL = 'https://gs-corp-backend.onrender.com/api';
 
 export function useCreateContact() {
   const { toast } = useToast();
   
-  return useMutation<ContactResponse, Error, ContactInput>({
+  return useMutation<any, Error, ContactInput>({
     mutationFn: async (data: ContactInput) => {
-      const validated = api.contacts.create.input.parse(data);
-      const res = await fetch(api.contacts.create.path, {
-        method: api.contacts.create.method,
+      const res = await fetch(`${API_URL}/contact/submit`, {
+        method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(validated),
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.type,
+          message: data.message,
+          company: '',
+          captchaToken: data.captchaToken
+        }),
       });
       
+      const text = await res.text();
+      console.log('Response:', text);
+      
       if (!res.ok) {
-        if (res.status === 400) {
-          const errorData = await res.json();
-          throw new Error(errorData.message || "Invalid submission");
+        try {
+          const errorData = JSON.parse(text);
+          throw new Error(errorData.error || "Failed to submit request");
+        } catch (e) {
+          throw new Error(`Server error: ${res.status} - ${text.substring(0, 100)}`);
         }
-        throw new Error("Failed to submit request");
       }
       
-      return api.contacts.create.responses[201].parse(await res.json());
+      try {
+        return JSON.parse(text);
+      } catch {
+        throw new Error('Invalid response from server');
+      }
     },
     onSuccess: () => {
       toast({
