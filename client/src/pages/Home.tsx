@@ -303,8 +303,8 @@ export default function Home() {
           <div className="absolute inset-0 z-10 bg-[#003366]/10 mix-blend-multiply"></div>
           <div className="absolute inset-0 z-10 bg-gradient-to-t lg:bg-gradient-to-r from-background/80 lg:from-background via-background/20 lg:via-background/5 to-transparent"></div>
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000"
-            alt="Feathers of Iron"
+            src="/boardroom-meeting.jpeg"
+            alt="Governance Framework & Accountability"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </motion.div>
@@ -453,34 +453,49 @@ export default function Home() {
             <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Services</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            {[
-              {
-                title: "Strategic Advisory",
-                desc: "Deep-level guidance for foundational institutional building, ensuring every decision aligns with long-term generational value."
-              },
-              {
-                title: "Enterprise Development",
-                desc: "Structural engineering for scalable corporate growth. We build the systems that allow your organization to expand without losing integrity."
-              },
-              {
-                title: "Capital Facilitation",
-                desc: "Coordinating access to strategic resources and networks, ensuring that capital deployment is as structured as the organizations it supports."
-              }
-            ].map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center text-center px-4"
-              >
-                <div className="w-12 h-1 bg-[#003366] mb-8"></div>
-                <h4 className="font-display font-bold text-2xl mb-4 tracking-tight text-[#003366]">{service.title}</h4>
-                <p className="text-muted-foreground font-body leading-relaxed">{service.desc}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Strategic Advisory",
+                  desc: "Deep-level guidance for foundational institutional building, ensuring every decision aligns with long-term generational value."
+                },
+                {
+                  title: "Enterprise Development",
+                  desc: "Structural engineering for scalable corporate growth. We build the systems that allow your organization to expand without losing integrity."
+                },
+                {
+                  title: "Capital Facilitation",
+                  desc: "Coordinating access to strategic resources and networks, ensuring that capital deployment is as structured as the organizations it supports."
+                }
+              ].map((service, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex flex-col items-start text-left px-4 py-6 bg-white rounded-2xl institutional-shadow border border-slate-200 hover:institutional-shadow-hover transition-all"
+                >
+                  <div className="w-12 h-1 bg-[#003366] mb-4"></div>
+                  <h4 className="font-display font-bold text-xl mb-3 tracking-tight text-[#003366]">{service.title}</h4>
+                  <p className="text-muted-foreground font-body leading-relaxed text-sm">{service.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="/networking.jpeg"
+                alt="Business Networking & Strategic Partnerships"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/40 to-transparent"></div>
+            </motion.div>
           </div>
         </div>
       </section>
