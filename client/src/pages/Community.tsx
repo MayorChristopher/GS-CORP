@@ -12,59 +12,81 @@ export default function Community() {
       {/* Community Impact and Diaspora Participation */}
       <section className="py-32 px-6 md:px-12 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-20"
-          >
-            <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Empowering Communities Everywhere</h2>
-            <p className="text-muted-foreground text-lg max-w-3xl">Enabling Africans at home and abroad to participate in building sustainable businesses</p>
-          </motion.div>
-
-          <div className="space-y-20">
-            {/* Community Participation */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-8"
             >
-              <div>
-                <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                  The goal of Generational Seed Corporation is to enable Africans at home and abroad to participate in building sustainable businesses. Through structured opportunities and ecosystem collaboration, communities can support enterprises and participate in long-term economic development.
-                </p>
-              </div>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                className="mb-8"
+              >
+                <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Empowering Communities Everywhere</h2>
+                <p className="text-muted-foreground text-lg max-w-3xl">Enabling Africans at home and abroad to participate in building sustainable businesses</p>
+              </motion.div>
 
-              <div>
-                <h3 className="font-display font-bold text-2xl text-[#003366] mb-8">Through Structured Opportunities, Communities Can:</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Support local enterprises",
-                    "Contribute strategic knowledge and networks",
-                    "Participate in economic development",
-                    "Build generational prosperity"
-                  ].map((item, idx) => (
-                    <motion.li
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="flex items-start gap-4"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-[#003366] flex items-center justify-center flex-shrink-0 mt-1">
-                        <FaCheck className="text-white text-sm" />
-                      </div>
-                      <span className="text-lg text-foreground/90">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="space-y-8"
+              >
+                <div>
+                  <p className="text-lg text-foreground/90 leading-relaxed mb-8">
+                    The goal of Generational Seed Corporation is to enable Africans at home and abroad to participate in building sustainable businesses. Through structured opportunities and ecosystem collaboration, communities can support enterprises and participate in long-term economic development.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-display font-bold text-2xl text-[#003366] mb-8">Through Structured Opportunities, Communities Can:</h3>
+                  <ul className="space-y-4">
+                    {[
+                      "Support local enterprises",
+                      "Contribute strategic knowledge and networks",
+                      "Participate in economic development",
+                      "Build generational prosperity"
+                    ].map((item, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="flex items-start gap-4"
+                      >
+                        <div className="w-6 h-6 rounded-full bg-[#003366] flex items-center justify-center flex-shrink-0 mt-1">
+                          <FaCheck className="text-white text-sm" />
+                        </div>
+                        <span className="text-lg text-foreground/90">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Long-Term Value Creation */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="/hands-together-unity.jpg"
+                alt="Community unity and collaboration"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/20 to-transparent" />
+            </motion.div>
+          </div>
+
+          <div className="space-y-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

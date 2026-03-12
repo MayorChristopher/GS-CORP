@@ -17,7 +17,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       {/* Who We Are Section */}
-      <section ref={aboutRef} id="about" className="flex flex-col lg:flex-row min-h-screen border-t border-border">
+      <section ref={aboutRef} id="identity" className="flex flex-col lg:flex-row min-h-screen border-t border-border">
         <div className="w-full lg:w-1/2 flex flex-col relative z-10">
           <div className="flex-1 px-6 py-12 md:px-12 md:py-20 lg:px-20 lg:py-24 max-w-3xl mx-auto w-full flex flex-col justify-center text-left">
             <motion.header 
@@ -261,31 +261,81 @@ export default function About() {
       </section>
 
       {/* Philosophy Section */}
-      <section id="philosophy" className="py-32 px-6 md:px-12 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section id="mission" className="py-32 px-6 md:px-12 bg-gradient-to-b from-white via-blue-50/40 to-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-0 w-96 h-96 bg-blue-100/20 rounded-full -mr-48 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-100/20 rounded-full -ml-40 blur-3xl" />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="mb-16"
+            className="mb-20"
           >
-            <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-8">Our Guiding Philosophy</h2>
-            <div className="space-y-4">
-              <p className="text-2xl md:text-3xl font-display font-bold text-[#003366] leading-relaxed">Move with purpose.</p>
-              <p className="text-2xl md:text-3xl font-display font-bold text-[#003366] leading-relaxed">Connect with direction.</p>
-              <p className="text-2xl md:text-3xl font-display font-bold text-[#003366] leading-relaxed">Build with structure.</p>
-            </div>
-            <div className="mt-12 space-y-4 border-t border-border pt-12">
-              <p className="text-xl md:text-2xl font-semibold text-foreground leading-relaxed">Before capital comes governance.</p>
-              <p className="text-xl md:text-2xl font-semibold text-foreground leading-relaxed">Before scale comes alignment.</p>
+            <h2 className="text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Our Guiding Philosophy</h2>
+            <p className="text-muted-foreground text-lg">The principles that drive everything we do</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              { icon: "🎯", title: "Move with Purpose", desc: "Every action is intentional and aligned with long-term value creation." },
+              { icon: "🧭", title: "Connect with Direction", desc: "Strategic relationships that create meaningful opportunities and growth." },
+              { icon: "🏗️", title: "Build with Structure", desc: "Governance and systems that enable sustainable, scalable enterprises." }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#003366]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative p-8 rounded-2xl border-2 border-[#003366]/10 group-hover:border-[#003366]/30 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                  <h3 className="font-display font-bold text-2xl text-[#003366] mb-4 group-hover:text-[#002244] transition-colors">{item.title}</h3>
+                  <p className="text-foreground/80 text-lg leading-relaxed group-hover:text-foreground/90 transition-colors">{item.desc}</p>
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#003366] to-blue-500 group-hover:w-full transition-all duration-500 rounded-full" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-20 pt-16 border-t-2 border-[#003366]/10"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#003366] text-white flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div>
+                  <div>
+                    <h4 className="font-display font-bold text-xl text-[#003366] mb-2">Before Capital Comes Governance</h4>
+                    <p className="text-foreground/80 text-lg leading-relaxed">Strong systems and accountability frameworks are the foundation for sustainable growth.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#003366] text-white flex items-center justify-center flex-shrink-0 font-bold text-lg">2</div>
+                  <div>
+                    <h4 className="font-display font-bold text-xl text-[#003366] mb-2">Before Scale Comes Alignment</h4>
+                    <p className="text-foreground/80 text-lg leading-relaxed">All stakeholders must be aligned on vision, values, and long-term objectives.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Credibility Section */}
-      <section id="credibility" className="py-32 px-6 md:px-12 bg-gradient-to-b from-white to-blue-50/30">
+      <section id="vision" className="py-32 px-6 md:px-12 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"

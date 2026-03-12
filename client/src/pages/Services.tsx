@@ -210,7 +210,8 @@ export default function Services() {
                   { num: "1", title: "Governance Structuring", desc: "We help businesses implement governance systems, accountability structures, and reporting processes." },
                   { num: "2", title: "Enterprise Architecture", desc: "We design operational structures that allow businesses to scale effectively." },
                   { num: "3", title: "Capital Readiness", desc: "We prepare businesses for investment readiness through financial visibility and governance alignment." },
-                  { num: "4", title: "Strategic Partnerships", desc: "We connect businesses with networks, advisors, and partners." }
+                  { num: "4", title: "Strategic Partnerships", desc: "We connect businesses with networks, advisors, and partners." },
+                  { num: "5", title: "Opportunity Matching", desc: "We match businesses with opportunities across the GSC ecosystem." }
                 ].map((item, idx) => (
                   <div key={idx}>
                     <div className="flex items-center gap-3 mb-3">
