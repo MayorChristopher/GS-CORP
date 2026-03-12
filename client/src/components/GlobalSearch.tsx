@@ -95,29 +95,44 @@ const GlobalSearch = forwardRef<GlobalSearchHandle>((_, ref) => {
   }, [isOpen, results, selectedIndex]);
 
   const handleNavigate = (item: SearchItem) => {
+    console.log("Navigating to:", item);
+    
     const [path, hash] = item.path.split("#");
     const currentPath = window.location.pathname;
     
-    // Navigate to the page first if needed
-    if (path !== currentPath && path !== "/") {
+    console.log("Current path:", currentPath, "Target path:", path, "Hash:", hash);
+    
+    // If navigating to a different page
+    if (path !== currentPath) {
       setLocation(path);
-      // Wait for navigation, then scroll to hash
-      setTimeout(() => {
-        if (hash) {
+      
+      // Wait for page to load, then scroll to section
+      if (hash) {
+        setTimeout(() => {
           const element = document.getElementById(hash);
+          console.log("Looking for element with id:", hash, "Found:", !!element);
           if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else {
+            // Fallback: scroll to top if element not found
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }
-        } else {
+        }, 800);
+      } else {
+        setTimeout(() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      }, 500);
+        }, 800);
+      }
     } else {
       // Same page navigation
       if (hash) {
         const element = document.getElementById(hash);
+        console.log("Same page - Looking for element with id:", hash, "Found:", !!element);
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          console.warn("Element not found:", hash);
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });

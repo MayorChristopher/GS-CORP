@@ -14,7 +14,7 @@ export const searchIndex: SearchItem[] = [
   { id: "hybrid", name: "GSC Hybrid Marketplace", section: "Hybrid Marketplace", path: "/#subsidiaries" },
   { id: "why-gsc", name: "Why Choose GSC", section: "Why GSC Section", path: "/#why-gsc" },
   { id: "join-ecosystem", name: "Join the Ecosystem", section: "Join Generational Seed", path: "/#contact" },
-  { id: "contact", name: "Contact Form", section: "Get in Touch", path: "/#contact-form" },
+  { id: "contact-form", name: "Contact Form", section: "Get in Touch", path: "/#contact-form" },
   
   // About Page
   { id: "about", name: "About Us", section: "About GSC", path: "/about" },
@@ -27,10 +27,10 @@ export const searchIndex: SearchItem[] = [
   
   // Services Page
   { id: "services", name: "Services", section: "Our Services", path: "/services" },
-  { id: "governance-services", name: "Governance & Structure", section: "Governance Services", path: "/services#services" },
-  { id: "strategic-connections", name: "Strategic Connections", section: "Partnership Services", path: "/services#services" },
-  { id: "opportunity-matching", name: "Opportunity Matching", section: "Matching Services", path: "/services#services" },
-  { id: "capital-readiness", name: "Capital Readiness", section: "Investment Preparation", path: "/services#services" },
+  { id: "governance-services", name: "Governance & Structure", section: "Governance Services", path: "/services" },
+  { id: "strategic-connections", name: "Strategic Connections", section: "Partnership Services", path: "/services" },
+  { id: "opportunity-matching", name: "Opportunity Matching", section: "Matching Services", path: "/services" },
+  { id: "capital-readiness", name: "Capital Readiness", section: "Investment Preparation", path: "/services" },
   { id: "framework", name: "Tailored Framework", section: "How Our Framework Works", path: "/services#framework" },
   { id: "governance-first", name: "Governance-First Approach", section: "Governance Services", path: "/services#governance" },
   
