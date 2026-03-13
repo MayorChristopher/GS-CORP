@@ -29,25 +29,29 @@ export default function Services() {
                 title: "Governance & Structure",
                 desc: "We structure businesses for sustainable growth and implement governance systems and accountability frameworks.",
                 icon: <FaBuildingColumns />,
-                accent: "#003366"
+                accent: "#003366",
+                image: "/structure.jpg"
               },
               {
                 title: "Strategic Connections",
                 desc: "We connect businesses with strategic partners, opportunities, advisors, and networks.",
                 icon: <FaNetworkWired />,
-                accent: "#0052CC"
+                accent: "#0052CC",
+                image: "/connections.jpg"
               },
               {
                 title: "Opportunity Matching",
                 desc: "We build sector-based enterprise ecosystem opportunity matching – aligning businesses with opportunities across the GSC ecosystem.",
                 icon: <FaChartLine />,
-                accent: "#003366"
+                accent: "#003366",
+                image: "/opp-matching.jpg"
               },
               {
                 title: "Capital Readiness",
                 desc: "We prepare businesses for capital readiness, financial transparency, and structured participation through our GSI platform.",
                 icon: <FaChartPie />,
-                accent: "#0052CC"
+                accent: "#0052CC",
+                image: "/capital-readiness.jpg"
               }
             ].map((service, idx) => (
               <motion.div
@@ -56,9 +60,28 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
-                className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 md:gap-16 items-center`}
+                className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center`}
               >
-                <div className="flex-1">
+                {/* Mobile/Tablet: Image as background */}
+                <div className="w-full md:hidden h-64 rounded-2xl overflow-hidden relative">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-black/50" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-2xl mb-4 bg-black/40">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-display font-bold text-2xl text-white mb-2">{service.title}</h3>
+                    <p className="text-white/90 text-sm leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Desktop: Content on left, image on right */}
+                <div className="hidden md:flex flex-1 flex-col">
                   <div className="flex items-start gap-6">
                     <div 
                       className="w-16 h-16 rounded-xl flex items-center justify-center text-white text-3xl flex-shrink-0 shadow-lg"
@@ -75,17 +98,12 @@ export default function Services() {
                   </div>
                 </div>
                 
-                <div className="flex-1 h-64 md:h-80 relative">
+                {/* Desktop: Image beside content */}
+                <div className="hidden md:block flex-1 h-80 rounded-2xl overflow-hidden">
                   <div 
-                    className="absolute inset-0 rounded-2xl opacity-10"
-                    style={{ backgroundColor: service.accent }}
+                    className="w-full h-full bg-cover bg-center"
+                    style={{ backgroundImage: `url(${service.image})` }}
                   />
-                  <div className="absolute inset-0 rounded-2xl border-2" style={{ borderColor: service.accent, opacity: 0.2 }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl opacity-20" style={{ color: service.accent }}>
-                      {service.icon}
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             ))}
