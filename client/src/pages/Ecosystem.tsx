@@ -17,8 +17,17 @@ export default function Ecosystem() {
   return (
     <div className="min-h-screen bg-background">
        {/* Connected Enterprise Ecosystem */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-white to-blue-50/30">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/ecosystem-bg.jpg" 
+            alt="Ecosystem Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/85" />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -59,7 +68,7 @@ export default function Ecosystem() {
             >
               <div className="relative w-full h-64 sm:h-80 flex flex-col items-center justify-center">
                 {/* Center Circle */}
-                <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full bg-gradient-to-br from-[#003366] to-blue-600 flex items-center justify-center text-white shadow-xl mb-6 sm:mb-8">
+                <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full bg-[#003366] flex items-center justify-center text-white shadow-xl mb-6 sm:mb-8">
                   <div className="text-center">
                     <div className="font-display font-bold text-xs sm:text-sm uppercase tracking-wider">GSC</div>
                     <div className="text-[10px] sm:text-xs opacity-80">Ecosystem</div>
@@ -83,9 +92,9 @@ export default function Ecosystem() {
               className="lg:col-span-1 order-3 space-y-3 sm:space-y-4"
             >
               {[
-                { title: "GSI", subtitle: "Generational Seed Finance Platform", desc: "Enterprise development and investment-readiness for high-growth potential assets." },
-                { title: "GSC Agro", subtitle: "Agro Services & Farm Network", desc: "Farm-to-market supply and cooperative governance modernized for security." },
-                { title: "GSC Hybrid", subtitle: "Hybrid Marketplace", desc: "A hybrid marketplace that enables safe business ecosystem participants to exchange products and services." }
+                { title: "GSI", subtitle: "Generational Seed Finance Platform", desc: "Enterprise development and investment-readiness for high-growth potential assets.", bgColor: "bg-blue-50" },
+                { title: "GSC Agro", subtitle: "Agro Services & Farm Network", desc: "Farm-to-market supply and cooperative governance modernized for security.", bgColor: "bg-green-50" },
+                { title: "GSC Hybrid", subtitle: "Hybrid Marketplace", desc: "A hybrid marketplace that enables safe business ecosystem participants to exchange products and services.", bgColor: "bg-amber-50" }
               ].map((sub, idx) => (
                 <motion.div
                   key={idx}
@@ -93,7 +102,7 @@ export default function Ecosystem() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 border border-gray-200 hover:border-[#003366]/30 hover:shadow-md transition-all"
+                  className={`${sub.bgColor} rounded-lg sm:rounded-xl p-4 sm:p-5 border border-gray-200 hover:border-[#003366]/30 hover:shadow-md transition-all`}
                 >
                   <h4 className="font-display font-bold text-lg sm:text-lg text-[#003366] mb-1">{sub.title}</h4>
                   <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">{sub.subtitle}</p>
@@ -109,7 +118,7 @@ export default function Ecosystem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-12 sm:mt-16 md:mt-20 p-6 sm:p-8 md:p-10 bg-gradient-to-r from-[#003366]/5 to-blue-500/5 rounded-xl sm:rounded-2xl border border-[#003366]/10"
+            className="mt-12 sm:mt-16 md:mt-20 p-6 sm:p-8 md:p-10 bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/30 shadow-lg"
           >
             <h3 className="font-display font-bold text-xl sm:text-2xl text-[#003366] mb-4 sm:mb-6">How It Works Together</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -189,15 +198,15 @@ export default function Ecosystem() {
       <section 
         id="gsi" 
         className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden"
-        style={{
-          backgroundImage: 'url(/gsi-network.jpeg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        {/* Overlay for text visibility */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#003366]/85 via-[#003366]/75 to-blue-900/85 backdrop-blur-sm" />
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/local-business.jpeg" 
+            alt="Local Business" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/70" />
+        </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
@@ -207,8 +216,8 @@ export default function Ecosystem() {
             variants={fadeUp}
             className="mb-12 sm:mb-16 md:mb-20"
           >
-            <h2 className="text-white font-display font-bold text-2xl sm:text-3xl md:text-5xl mb-3 sm:mb-4">GSI – Generational Seed Investment</h2>
-            <p className="text-blue-100/90 text-base sm:text-lg max-w-3xl">The value exchange and investment platform within the GSC ecosystem.</p>
+            <h2 className="text-[#003366] font-display font-bold text-2xl sm:text-3xl md:text-5xl mb-3 sm:mb-4">GSI – Generational Seed Investment</h2>
+            <p className="text-gray-700 text-base sm:text-lg max-w-3xl">The value exchange and investment platform within the GSC ecosystem.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
@@ -219,13 +228,13 @@ export default function Ecosystem() {
               className="space-y-6 sm:space-y-8"
             >
               <div>
-                <p className="text-base sm:text-lg text-blue-50/90 leading-relaxed mb-6 sm:mb-8">
+                <p className="text-base sm:text-lg text-gray-800 leading-relaxed mb-6 sm:mb-8">
                   Unlike traditional investment platforms that focus only on financial capital, GSI recognizes multiple forms of value that drive business growth.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-blue-100 mb-6 sm:mb-8">Forms of Value We Accept:</h3>
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-[#003366] mb-6 sm:mb-8">Forms of Value We Accept:</h3>
                 <ul className="space-y-3 sm:space-y-4">
                   {[
                     "Financial investment",
@@ -243,17 +252,17 @@ export default function Ecosystem() {
                       transition={{ delay: idx * 0.1 }}
                       className="flex items-center gap-3 sm:gap-4"
                     >
-                      <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <FaCheck className="text-[#003366] text-xs sm:text-sm font-bold" />
+                      <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-[#003366] flex items-center justify-center flex-shrink-0">
+                        <FaCheck className="text-white text-xs sm:text-sm font-bold" />
                       </div>
-                      <span className="text-base sm:text-lg text-blue-50/90">{item}</span>
+                      <span className="text-base sm:text-lg text-gray-800">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-4 sm:pt-6 border-t border-blue-400/30">
-                <p className="text-base sm:text-lg text-blue-50 font-semibold">
+              <div className="pt-4 sm:pt-6 border-t border-gray-300">
+                <p className="text-base sm:text-lg text-gray-800 font-semibold">
                   Through this dual-value system, businesses gain both capital and strategic support from investors and the community, enhancing their growth potential.
                 </p>
               </div>
@@ -264,7 +273,7 @@ export default function Ecosystem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-white/20 shadow-2xl"
+              className="bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-gray-200 shadow-2xl"
             >
               <div className="space-y-6 sm:space-y-8">
                 {[
@@ -275,10 +284,10 @@ export default function Ecosystem() {
                 ].map((item, idx) => (
                   <div key={idx}>
                     <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-yellow-400 text-[#003366] flex items-center justify-center font-bold text-sm sm:text-base">{item.num}</div>
-                      <h4 className="font-display font-bold text-lg sm:text-xl text-white">{item.title}</h4>
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-bold text-sm sm:text-base">{item.num}</div>
+                      <h4 className="font-display font-bold text-lg sm:text-xl text-[#003366]">{item.title}</h4>
                     </div>
-                    <p className="text-sm sm:text-base text-blue-50/80 ml-10 sm:ml-13">{item.desc}</p>
+                    <p className="text-sm sm:text-base text-gray-700 ml-10 sm:ml-13">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -288,8 +297,17 @@ export default function Ecosystem() {
       </section>
 
       {/* Agro Services Section */}
-      <section id="agro" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section id="agro" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/agro-bg.jpg" 
+            alt="Agro Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/85" />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -404,6 +422,57 @@ export default function Ecosystem() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Coordination Section */}
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/opp-matching.jpg" 
+            alt="Opportunity Matching" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/85" />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-[#003366]">Ecosystem Coordination</h2>
+            <p className="text-lg text-foreground/90 leading-relaxed mb-8 max-w-3xl">
+              Rather than operating as a single standalone service, GSC is designed as a coordinated system-thinking enterprise ecosystem. Through specialized platforms and subsidiaries, the ecosystem connects:
+            </p>
+            <ul className="space-y-4">
+              {[
+                "Businesses seeking structure and growth",
+                "Investors seeking organized opportunities",
+                "Advisors and partners contributing expertise",
+                "Communities supporting enterprise development"
+              ].map((item, idx) => (
+                <motion.li
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-6 h-6 rounded-full bg-[#003366] flex items-center justify-center flex-shrink-0 mt-1">
+                    <FaCheck className="text-white text-sm" />
+                  </div>
+                  <span className="text-lg text-foreground/90">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+            <p className="text-lg text-foreground font-semibold pt-4">
+              This coordinated structure allows value to flow across the ecosystem.
+            </p>
+          </motion.div>
         </div>
       </section>
 

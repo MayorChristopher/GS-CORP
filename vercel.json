@@ -5,6 +5,10 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/api/waitlist",
+      "destination": "/api/waitlist"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
