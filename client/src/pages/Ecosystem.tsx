@@ -391,7 +391,7 @@ export default function Ecosystem() {
             >
               <div>
                 <p className="text-base sm:text-lg text-foreground/90 leading-relaxed mb-6 sm:mb-8">
-                  The GSC Hybrid Marketplace is a secure platform where ecosystem participants can exchange products and services, eliminating the traditional 'Pay and Pay' bottleneck in business engagements.
+                  The GSC Hybrid Marketplace is a secure platform where ecosystem participants can exchange products and services, eliminating the traditional 'pay and pray' bottleneck in business engagements.
                 </p>
               </div>
 
