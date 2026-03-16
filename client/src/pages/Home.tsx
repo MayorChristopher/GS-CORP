@@ -68,8 +68,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Section 1: Hero - The Mission */}
-      <section className="relative min-h-[80vh] w-full flex items-center justify-center overflow-hidden py-20 md:py-24">
+      {/* Section 1: Hero - Governance-First */}
+      <section className="relative h-screen sm:min-h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -80,28 +80,31 @@ export default function Home() {
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[rgba(10,43,88,0.75)] z-10" />
+          <div className="absolute inset-0 bg-[rgba(10,43,88,0.4)] z-10" />
         </div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-20 text-center">
-          <motion.div style={{ y: heroY }}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-6">
-              Our Mission
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-20 text-center w-full py-12 sm:py-0">
+          <motion.div style={{ y: heroY }} className="flex flex-col items-center justify-center">
+            <div className="inline-block bg-white/15 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-2 sm:mb-3 border border-white/30">
+              <p className="text-white font-semibold text-xs sm:text-sm tracking-wide">SYSTEMS THINKING FOR AFRICAN LOCAL BUSINESSES.</p>
+            </div>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 md:mb-8">
+              Building a Structured Future for African Enterprises.
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
-              To empower entrepreneurs, connect businesses with opportunities, and build systems that turn local potential into sustainable economic value.
+            <p className="text-sm sm:text-lg md:text-xl text-white/95 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+              Generational Seed Corporation (GSC) builds governance-first enterprise ecosystems that help businesses grow sustainably, starting with Nigeria's dynamic SME economy. We connect founders, businesses, investors, and communities through tailored opportunities that transform ambition and local enterprises into scalable and investable institutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center w-full sm:w-auto">
               <button 
                 onClick={() => window.location.href = '/ecosystem'}
-                className="bg-white text-[#0A2B58] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group"
+                className="bg-white text-[#0A2B58] px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group text-xs sm:text-base"
               >
                 Explore the Ecosystem
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
                 onClick={() => window.location.href = '/membership'}
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors text-xs sm:text-base"
               >
                 Join Waitlist
               </button>
@@ -110,7 +113,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 2: Governance-First Approach */}
+      {/* Section 2: Our Mission */}
+      <section className="py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#0A2B58] to-[#081f42]">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block bg-white/10 rounded-full px-4 py-2 mb-6 border border-white/20">
+              <p className="text-white/80 font-semibold text-sm">What We Stand For</p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              Our Mission
+            </h2>
+            <p className="text-xl text-white/90 leading-relaxed">
+              To empower entrepreneurs, connect businesses with opportunities, and build systems that turn local potential into sustainable economic value.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section 3: Governance Philosophy */}
       <section className="py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -217,7 +241,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 3: Market Reality & Economic Thesis */}
+      {/* Section 4: Market Reality & Economic Thesis */}
       <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -240,6 +264,20 @@ export default function Home() {
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
               Nigeria has one of the most entrepreneurial populations in the world, with millions of businesses across formal and informal sectors. However, many lack proper governance and structure. As a result, many close within their first year or struggle to grow. Most do not fail due to lack of ambition or opportunity, but because they lack systems, governance, and structured support.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-[#0A2B58] mb-6">
+              Economic Thesis
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+              This gap represents both a risk and an opportunity, revealing the untapped potential within the African business community.
             </p>
           </motion.div>
 
@@ -275,28 +313,10 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <p className="text-lg text-gray-700 italic mb-8">
-              This gap represents both a risk and an opportunity, revealing the untapped potential within the African business community.
-            </p>
-            <button
-              onClick={() => window.location.href = '/about'}
-              className="inline-flex items-center gap-2 text-[#0A2B58] font-semibold hover:gap-3 transition-all group"
-            >
-              Explore Our Market Analysis
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </motion.div>
         </div>
       </section>
 
-      {/* Section 4: Structured Solution - The 5 Pillars */}
+      {/* Section 5: Structured Solutions - The 5 Pillars */}
       <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -315,8 +335,11 @@ export default function Home() {
             className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#0A2B58] mb-6">
-              Systems That Drive Growth
+              Structured Solutions
             </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Systems That Drive Growth
+            </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               The size and resilience of the local economy create a powerful base for expansion. When supported by governance discipline, strategic clarity, and operational transparency, this base can evolve into sustainable institutional growth.
             </p>
@@ -405,7 +428,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 5: The Ecosystem */}
+      {/* Section 6: The Ecosystem */}
       <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -525,7 +548,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6.5: Tailored Opportunity Framework - Horizontal Progress Tracker */}
+      {/* Section 7: Tailored Opportunity Framework - Horizontal Progress Tracker */}
       <section className="py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -585,20 +608,11 @@ export default function Home() {
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <p className="text-gray-600 text-base md:text-lg">
-              <span className="font-semibold text-[#0A2B58]">Hover over each stage</span> to see the progression path
-            </p>
-          </motion.div>
+
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Section 8: Contact Form - CTA */}
       <section id="contact-form" className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -610,34 +624,61 @@ export default function Home() {
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+                Join the Generational Seed Ecosystem
+              </h2>
+              <p className="text-blue-100/90 text-lg max-w-3xl mx-auto mb-8">
+                Whether you are a founder, business owner, investor, or ecosystem partner, you can contribute your unique strengths to building structured African enterprises and help create tailored opportunities for Africa's future.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-                Let's Build Together
-              </h2>
-              <p className="text-blue-100/80 text-lg max-w-md mb-12">
-                Tell us about your business, your goals, and how you'd like to participate in the GSC ecosystem. We'll connect you with the right opportunities and support.
-              </p>
-              
-              <div className="space-y-8">
-                <div>
-                  <h4 className="font-semibold text-white mb-2 text-lg">For Businesses:</h4>
-                  <p className="text-blue-100/80">Get governance support, strategic partnerships, and access to capital readiness programs.</p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold mb-8 text-white">Get Involved</h3>
+                
+                <div className="space-y-8 mb-12">
+                  <div>
+                    <h4 className="font-semibold text-white mb-2 text-lg">For Businesses:</h4>
+                    <p className="text-blue-100/80">Get governance support, strategic partnerships, and access to capital readiness programs.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-2 text-lg">For Investors:</h4>
+                    <p className="text-blue-100/80">Discover structured investment opportunities through our GSI platform.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-2 text-lg">For Partners:</h4>
+                    <p className="text-blue-100/80">Collaborate with us to build sustainable enterprise ecosystems.</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2 text-lg">For Investors:</h4>
-                  <p className="text-blue-100/80">Discover structured investment opportunities through our GSI platform.</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2 text-lg">For Partners:</h4>
-                  <p className="text-blue-100/80">Collaborate with us to build sustainable enterprise ecosystems.</p>
-                </div>
-              </div>
+
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  onClick={() => window.location.href = '/membership'}
+                  className="w-full bg-white text-[#0A2B58] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group"
+                >
+                  Join the Waitlist
+                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </motion.div>
             </div>
 
             <div className="bg-white rounded-2xl p-8 md:p-10 text-foreground shadow-2xl">
-              <h3 className="text-2xl font-bold mb-2">Get in Touch</h3>
+              <h3 className="text-2xl font-bold mb-2">Contact Us</h3>
               <p className="text-sm text-gray-600 mb-6">Tell us about your business and how you'd like to participate in the GSC ecosystem.</p>
               
               <form onSubmit={handleSubmit} className="space-y-5">

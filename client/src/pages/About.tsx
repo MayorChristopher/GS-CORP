@@ -254,6 +254,14 @@ export default function About() {
                   </div>
                   <p className="text-foreground/80 ml-11">We connect businesses with networks, advisors, and partners.</p>
                 </div>
+
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 rounded-full bg-[#003366] text-white flex items-center justify-center font-bold text-sm">5</div>
+                    <h4 className="font-display font-bold text-lg text-[#003366]">Opportunity Matching</h4>
+                  </div>
+                  <p className="text-foreground/80 ml-11">We match businesses with opportunities across the GSC ecosystem.</p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -493,8 +501,25 @@ export default function About() {
               className="pt-8 border-t border-border"
             >
               <h3 className="font-display font-bold text-2xl text-[#003366] mb-6">Building Institutions, Not Just Businesses</h3>
-              <p className="text-lg text-foreground font-semibold leading-relaxed">
+              <p className="text-lg text-foreground/90 leading-relaxed mb-4">
                 Generational Seed Corporation is designed with a long-term institutional mindset. Our focus is not only on supporting businesses today, but on building systems that allow enterprises to grow sustainably over generations.
+              </p>
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                This philosophy shapes how we design governance systems, enterprise ecosystems, and participation models.
+              </p>
+            </motion.div>
+
+            {/* Our Commitment */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="pt-8 border-t border-border"
+            >
+              <h3 className="font-display font-bold text-2xl text-[#003366] mb-6">Our Commitment</h3>
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                Generational Seed Corporation believes that sustainable economic growth begins with structured enterprises. By combining governance systems, strategic partnerships, and ecosystem coordination, GSC aims to help businesses grow into long-term generational assets.
               </p>
             </motion.div>
           </div>

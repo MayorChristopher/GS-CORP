@@ -147,14 +147,15 @@ export default function Membership() {
       </section>
 
       {/* Who We Serve Section */}
-      <section className="relative py-32 px-6 md:px-12 md:bg-white" style={{
+      <section className="relative py-32 px-6 md:px-12" style={{
         backgroundImage: 'url(/agreement.jpeg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
       }}>
-        {/* Mobile overlay */}
-        <div className="absolute inset-0 bg-black/40 md:hidden" />
+        {/* Mobile/Tablet overlay - only show background image on mobile/tablet */}
+        <div className="absolute inset-0 bg-black/40 lg:hidden" />
+        {/* Desktop: white background overlay */}
+        <div className="absolute inset-0 bg-white hidden lg:block" />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -163,10 +164,9 @@ export default function Membership() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="md:bg-transparent"
             >
-              <h2 className="text-white md:text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Who We Serve</h2>
-              <p className="text-white/90 md:text-muted-foreground text-lg max-w-3xl mb-8">The platform is designed for</p>
+              <h2 className="text-white lg:text-[#003366] font-display font-bold text-3xl md:text-5xl mb-4">Who We Serve</h2>
+              <p className="text-white/90 lg:text-muted-foreground text-lg max-w-3xl mb-8">The platform is designed for</p>
               <ul className="space-y-4">
                 {[
                   "Local businesses preparing for growth and scale",
@@ -181,12 +181,12 @@ export default function Membership() {
                     transition={{ delay: idx * 0.1 }}
                     className="flex items-start gap-4"
                   >
-                    <div className="w-6 h-6 rounded-full bg-white md:bg-[#003366] flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-3 h-3 text-[#003366] md:text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-6 h-6 rounded-full bg-white lg:bg-[#003366] flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-3 h-3 text-[#003366] lg:text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-lg text-white md:text-foreground/90">{item}</span>
+                    <span className="text-lg text-white lg:text-foreground/90">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -197,7 +197,7 @@ export default function Membership() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="hidden lg:block relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl"
+              className="hidden lg:block relative h-96 lg:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl"
             >
               <img src="/agreement.jpeg" alt="Agreement and partnership" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/20 to-transparent" />
