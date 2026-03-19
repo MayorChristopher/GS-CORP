@@ -24,7 +24,7 @@ export default function Home() {
     name: "",
     email: "",
     message: "",
-    type: "contact"
+    type: "partner"
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -32,8 +32,8 @@ export default function Home() {
   const captchaRef = useRef<HCaptcha>(null);
 
   const inquiryTypes = [
-    { value: "contact", label: "General Contact", desc: "General inquiries and questions" },
     { value: "partner", label: "Partner With Us", desc: "Strategic partnership opportunities" },
+    { value: "contact", label: "General Contact", desc: "General inquiries and questions" },
     { value: "join", label: "Join the Ecosystem", desc: "Membership and engagement" }
   ];
 
@@ -59,7 +59,7 @@ export default function Home() {
     }
     createContact.mutate({ ...formData, captchaToken }, {
       onSuccess: () => {
-        setFormData({ name: "", email: "", message: "", type: "contact" });
+        setFormData({ name: "", email: "", message: "", type: "partner" });
         setCaptchaToken(null);
         captchaRef.current?.resetCaptcha();
       }
@@ -133,6 +133,126 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+        {/* Section 5: Structured Solutions - The 5 Pillars */}
+      <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/structure.jpg" 
+            alt="Architecture background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A2B58]/90 to-[#0A2B58]/70" />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2B58] mb-6">
+              Structured Solutions
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Systems That Drive Growth
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              The size and resilience of the local economy create a powerful base for expansion. When supported by governance discipline, strategic clarity, and operational transparency, this base can evolve into sustainable institutional growth.
+            </p>
+          </motion.div>
+
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-4">
+              {[
+                {
+                  title: "Governance Structuring",
+                  desc: "We help businesses implement governance systems, accountability structures, and reporting processes."
+                },
+                {
+                  title: "Enterprise Architecture",
+                  desc: "We design operational structures that allow businesses to scale effectively."
+                },
+                {
+                  title: "Capital Readiness",
+                  desc: "We prepare businesses for investment readiness through financial visibility and governance alignment."
+                },
+                {
+                  title: "Strategic Partnerships",
+                  desc: "We connect businesses with networks, advisors, and partners."
+                },
+                {
+                  title: "Tailored Opportunity",
+                  desc: "We align businesses with adapted opportunities across the GSC ecosystem."
+                }
+              ].map((pillar, idx) => (
+                <CarouselItem key={idx} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    whileHover={{ y: -8 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:border-white/40 hover:bg-white/15 transition-all cursor-pointer h-full flex flex-col"
+                  >
+                    <div className="text-4xl font-bold text-white/30 mb-4">
+                      {String(idx + 1).padStart(2, '0')}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 flex-grow">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-white/80 leading-relaxed">
+                      {pillar.desc}
+                    </p>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            {/* Navigation Controls Below */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center gap-6 mt-12"
+            >
+              <CarouselPrevious className="relative left-0 h-12 w-12 bg-white/20 hover:bg-white/30 border-white/30 hover:border-white/50 transition-all" />
+              <div className="flex items-center gap-2">
+                {[0, 1, 2, 3, 4].map((dot) => (
+                  <motion.div
+                    key={dot}
+                    className="h-2 bg-white/40 rounded-full transition-all"
+                    animate={{ width: dot === 0 ? 24 : 8 }}
+                  />
+                ))}
+              </div>
+              <CarouselNext className="relative right-0 h-12 w-12 bg-white/20 hover:bg-white/30 border-white/30 hover:border-white/50 transition-all" />
+            </motion.div>
+
+            {/* Direction Labels */}
+            <div className="flex justify-between items-center mt-6 px-4">
+              <span className="text-white/60 text-sm font-medium">← Left</span>
+              <span className="text-white/60 text-sm font-medium">Right →</span>
+            </div>
+          </Carousel>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <button
+              onClick={() => window.location.href = '/services'}
+              className="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all group"
+            >
+              Discover All Services
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Section 3: Governance Philosophy */}
       <section className="py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
@@ -316,118 +436,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 5: Structured Solutions - The 5 Pillars */}
-      <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/structure.jpg" 
-            alt="Architecture background" 
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A2B58]/90 to-[#0A2B58]/70" />
-        </div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2B58] mb-6">
-              Structured Solutions
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Systems That Drive Growth
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              The size and resilience of the local economy create a powerful base for expansion. When supported by governance discipline, strategic clarity, and operational transparency, this base can evolve into sustainable institutional growth.
-            </p>
-          </motion.div>
-
-          <Carousel className="w-full px-12 md:px-16">
-            <CarouselContent>
-              {[
-                {
-                  title: "Governance Structuring",
-                  desc: "We help businesses implement governance systems, accountability structures, and reporting processes."
-                },
-                {
-                  title: "Enterprise Architecture",
-                  desc: "We design operational structures that allow businesses to scale effectively."
-                },
-                {
-                  title: "Capital Readiness",
-                  desc: "We prepare businesses for investment readiness through financial visibility and governance alignment."
-                },
-                {
-                  title: "Strategic Partnerships",
-                  desc: "We connect businesses with networks, advisors, and partners."
-                },
-                {
-                  title: "Tailored Opportunity",
-                  desc: "We align businesses with adapted opportunities across the GSC ecosystem."
-                }
-              ].map((pillar, idx) => (
-                <CarouselItem key={idx} className="basis-full md:basis-1/2">
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    whileHover={{ x: 10 }}
-                    className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all cursor-pointer h-full"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="text-3xl font-bold text-white/40 min-w-fit">
-                        {String(idx + 1).padStart(2, '0')}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                          {pillar.title}
-                        </h3>
-                        <p className="text-white/80">
-                          {pillar.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-0 md:left-2 h-10 w-10 bg-white/20 hover:bg-white/30 border-white/30" />
-            <CarouselNext className="right-0 md:right-2 h-10 w-10 bg-white/20 hover:bg-white/30 border-white/30" />
-            <div className="flex justify-center mt-6 md:hidden">
-              <motion.div
-                animate={{ x: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="text-white/60 text-sm flex items-center gap-2"
-              >
-                Swipe to explore
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.div>
-            </div>
-          </Carousel>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <button
-              onClick={() => window.location.href = '/services'}
-              className="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all group"
-            >
-              Discover All Services
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </motion.div>
-        </div>
-      </section>
-
+    
       {/* Section 6: The Ecosystem */}
       <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -649,36 +658,45 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-bold mb-8 text-white">Get Involved</h3>
                 
-                <div className="space-y-8 mb-12">
-                  <div>
-                    <h4 className="font-semibold text-white mb-2 text-lg">For Businesses:</h4>
-                    <p className="text-blue-100/80">Get governance support, strategic partnerships, and access to capital readiness programs.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-2 text-lg">For Investors:</h4>
-                    <p className="text-blue-100/80">Discover structured investment opportunities through our GSI platform.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-2 text-lg">For Partners:</h4>
-                    <p className="text-blue-100/80">Collaborate with us to build sustainable enterprise ecosystems.</p>
-                  </div>
+                <div className="space-y-4">
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    onClick={() => window.location.href = '/ecosystem'}
+                    className="w-full bg-white text-[#0A2B58] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group"
+                  >
+                    Explore the Ecosystem
+                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                  
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    onClick={() => window.location.href = '/membership'}
+                    className="w-full bg-white text-[#0A2B58] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group"
+                  >
+                    Join the Network
+                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                  
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
+                    className="w-full bg-white text-[#0A2B58] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group"
+                  >
+                    Partner With Us
+                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
                 </div>
-
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  onClick={() => window.location.href = '/membership'}
-                  className="w-full bg-white text-[#0A2B58] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 group"
-                >
-                  Join the Waitlist
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </motion.button>
               </motion.div>
             </div>
 
             <div className="bg-white rounded-2xl p-8 md:p-10 text-foreground shadow-2xl">
-              <h3 className="text-2xl font-bold mb-2">Contact Us</h3>
+              <h3 className="text-2xl font-bold mb-2">Talk to Us</h3>
               <p className="text-sm text-gray-600 mb-6">Tell us about your business and how you'd like to participate in the GSC ecosystem.</p>
               
               <form onSubmit={handleSubmit} className="space-y-5">
