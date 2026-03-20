@@ -133,7 +133,83 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-        {/* Section 5: Structured Solutions - The 5 Pillars */}
+
+      {/* Section 3: Market Reality & Economic Thesis */}
+      <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/market.jpg" 
+            alt="Market Reality" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/70" />
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2B58] mb-6">
+              Market Reality
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+              Nigeria has one of the most entrepreneurial populations in the world, with millions of businesses across formal and informal sectors. However, many lack proper governance and structure. As a result, many close within their first year or struggle to grow. Most do not fail due to lack of ambition or opportunity, but because they lack systems, governance, and structured support.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-[#0A2B58] mb-6">
+              Economic Thesis
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+              This gap represents both a risk and an opportunity, revealing the untapped potential within the African business community.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Untapped Undervalued Potential",
+                desc: "Emerging markets such as Nigeria are characterized not by absences of opportunity, but by under-structured opportunity. Nigeria presents a unique market dynamic defined by structural inefficiencies."
+              },
+              {
+                title: "Untapped Entrepreneurial Base",
+                desc: "A vast entrepreneurial population operates largely outside formal financial and governance systems. Many businesses demonstrate market viability yet lack the institutional credibility required to access structured capital."
+              },
+              {
+                title: "Unfounded Opportunities",
+                desc: "Gaps in financial intermediation, technology adoption, and corporate governance mean high-growth opportunities remain undocumented, unvetted, and unfunded."
+              }
+            ].map((card, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white rounded-lg p-8 border border-gray-200 hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-bold text-[#0A2B58] mb-4">
+                  {card.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {card.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Structured Solutions - The 5 Pillars */}
       <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -254,7 +330,7 @@ export default function Home() {
       </section>
 
 
-      {/* Section 3: Governance Philosophy */}
+      {/* Section 5: Governance Philosophy */}
       <section className="py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -357,81 +433,6 @@ export default function Home() {
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Market Reality & Economic Thesis */}
-      <section className="relative py-20 md:py-24 px-4 sm:px-6 md:px-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/market.jpg" 
-            alt="Market Reality" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/70" />
-        </div>
-        
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2B58] mb-6">
-              Market Reality
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
-              Nigeria has one of the most entrepreneurial populations in the world, with millions of businesses across formal and informal sectors. However, many lack proper governance and structure. As a result, many close within their first year or struggle to grow. Most do not fail due to lack of ambition or opportunity, but because they lack systems, governance, and structured support.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h3 className="text-3xl md:text-4xl font-bold text-[#0A2B58] mb-6">
-              Economic Thesis
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
-              This gap represents both a risk and an opportunity, revealing the untapped potential within the African business community.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Untapped Undervalued Potential",
-                desc: "Emerging markets such as Nigeria are characterized not by absences of opportunity, but by under-structured opportunity. Nigeria presents a unique market dynamic defined by structural inefficiencies."
-              },
-              {
-                title: "Untapped Entrepreneurial Base",
-                desc: "A vast entrepreneurial population operates largely outside formal financial and governance systems. Many businesses demonstrate market viability yet lack the institutional credibility required to access structured capital."
-              },
-              {
-                title: "Unfounded Opportunities",
-                desc: "Gaps in financial intermediation, technology adoption, and corporate governance mean high-growth opportunities remain undocumented, unvetted, and unfunded."
-              }
-            ].map((card, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-lg p-8 border border-gray-200 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-xl font-bold text-[#0A2B58] mb-4">
-                  {card.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {card.desc}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
